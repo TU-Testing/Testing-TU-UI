@@ -5,7 +5,7 @@
     "networkMode": "host",
     "containerDefinitions": [
         {
-            "name": "",
+            "name": "TestingTU",
             "image": "",
             "repositoryCredentials": {
                 "credentialsParameter": ""
