@@ -38,7 +38,7 @@
             ],
             "environmentFiles": [
                 {
-                    "value": "",
+                    "value": "null",
                     "type": "s3"
                 }
             ],
@@ -66,8 +66,8 @@
                 },
                 "devices": [
                     {
-                        "hostPath": "",
-                        "containerPath": "",
+                        "hostPath": "null",
+                        "containerPath": "null",
                         "permissions": [
                             "read"
                         ]
@@ -148,7 +148,7 @@
             },
             "healthCheck": {
                 "command": [
-                    ""
+                    "null"
                 ],
                 "interval": 0,
                 "timeout": 0,
@@ -193,7 +193,7 @@
                 }
             },
             "efsVolumeConfiguration": {
-                "fileSystemId": "",
+                "fileSystemId": "null",
                 "rootDirectory": "",
                 "transitEncryption": "DISABLED",
                 "transitEncryptionPort": 0,
