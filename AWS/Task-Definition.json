@@ -1,5 +1,5 @@
 {
-    "family": "",
+    "family": "Task-Definition-Testing",
     "taskRoleArn": "",
     "executionRoleArn": "",
     "networkMode": "host",
