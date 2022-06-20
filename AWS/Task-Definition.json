@@ -95,7 +95,7 @@
             ],
             "dependsOn": [
                 {
-                    "containerName": "",
+                    "containerName": "TestingTU",
                     "condition": "COMPLETE"
                 }
             ],
@@ -233,7 +233,7 @@
     "ipcMode": "host",
     "proxyConfiguration": {
         "type": "APPMESH",
-        "containerName": "",
+        "containerName": "TestingTU",
         "properties": [
             {
                 "name": "",
