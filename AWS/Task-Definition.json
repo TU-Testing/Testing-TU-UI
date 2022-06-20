@@ -251,7 +251,7 @@
         "sizeInGiB": 0
     },
     "runtimePlatform": {
-        "cpuArchitecture": "X86_64",
-        "operatingSystemFamily": "WINDOWS_SERVER_2004_CORE"
+        "cpuArchitecture": "ARM64",
+        "operatingSystemFamily": "LINUX"
     }
 }
