@@ -6,7 +6,7 @@ module.exports.webapp = async (event) => {
         body: JSON.stringify({
             value: {
                 message: 'Hello OneTUDN',
-                INPUT: Event,
+                INPUT: event,
             },
             replacer: null,
             space: 2
