@@ -1,7 +1,13 @@
-'use strict';
-
-module.exports.generateRandomNumber = event => {
-  const randomNumber = parseInt(Math.random() * 100);
-  console.log("The random generated integer is: ", randomNumber);
-  return randomNumber;
+module.exports.webapp = async (event) => {
+    return {
+        statusCode: 200,
+        body: JSON.stringify(
+            value, {
+                message: 'Hello OneTUDN',
+                INPUT: Event,
+            },
+            replacer, null,
+            space, 2
+        ),
+    };
 };
