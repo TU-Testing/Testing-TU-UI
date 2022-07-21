@@ -14,7 +14,7 @@ functions:
     events:
       - http:
           path: One-TUDN
-          method: get
+          method: post
           cors: false
           async: false
           private: false
