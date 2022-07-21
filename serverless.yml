@@ -2,6 +2,7 @@ service: One-TUDN
 
 provider:
   name: aws
+  endpointType: REGIONAL
   runtime: nodejs14.x
   stage: int
   region: us-east-1
@@ -14,7 +15,5 @@ functions:
     events:
       - http:
           path: One-TUDN
-          method: post
-          cors: false
-          async: false
-          private: false
+          method: get
+          
