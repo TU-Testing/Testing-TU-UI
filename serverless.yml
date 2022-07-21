@@ -1,13 +1,20 @@
-service: one
+service: One-TUDN
 
 provider:
   name: aws
-  runtime: nodejs12.x
-  stage: tudn
+  runtime: nodejs14.x
+  stage: int
   region: us-east-1
 
 functions:
-  int:
+  Webapp:
     handler: src/handler.generateRandomNumber
     timeout: 60 # seconds
-    memorySize: 128 # mb
+    memorySize: 256 # mb
+    events:
+      - http:
+          path: One-TUDN
+          method: get
+          cors: false
+          async: false
+          private: false
