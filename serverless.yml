@@ -1,15 +1,15 @@
-service: One-tudn
+service: One-TUDN
 
 provider:
   name: aws
   runtime: nodejs14.x
-  stage: Integration
+  stage: int
   region: us-east-1
 
 functions:
   one-tudn-int:
     handler: src/handler.webapp
-    name: one-tudn-int
+    #name: one-tudn-int
     timeout: 30 # seconds
     memorySize: 128 # mb
     #events:
