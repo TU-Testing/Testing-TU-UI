@@ -1,9 +1,9 @@
-service: One-TUDN
+service: One-tudn
 
 provider:
   name: aws
   runtime: nodejs14.x
-  stage: int
+  stage: Integration
   region: us-east-1
 
 functions:
