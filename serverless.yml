@@ -9,7 +9,7 @@ provider:
 functions:
   Webapp:
     handler: src/handler.webapp
-    #name: one-tudn-int
+    name: one-tudn-int
     timeout: 30 # seconds
     memorySize: 128 # mb
     #events:
