@@ -31,14 +31,14 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     
     - name: Send Slack Notification on Success
-        if: ${{ success() }}
-        uses: rtCamp/action-slack-notify@v2
-        env:
-          SLACK_CHANNEL: _devops_
-          SLACK_COLOR: "#9e2a2b"
-          #SLACK_ICON: https://someurl.com/logo.png
-          SLACK_MESSAGE: "Job ${{ github.job }} succeeded"
-          SLACK_TITLE: Success execution
-          SLACK_USERNAME: Deploy Bot
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+      uses: rtCamp/action-slack-notify@v2
+      if: ${{ success() }}
+      env:
+        SLACK_CHANNEL: _devops_
+        SLACK_COLOR: "#9e2a2b"
+        #SLACK_ICON: https://someurl.com/logo.png
+        SLACK_MESSAGE: "Job ${{ github.job }} succeeded"
+        SLACK_TITLE: Success execution
+        SLACK_USERNAME: Deploy Bot
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}  
 
