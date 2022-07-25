@@ -8,7 +8,7 @@ provider:
 
 functions:
   Webapp:
-    handler: src/handler.webapp
+    handler: src/handler.webapp1
     timeout: 30 # seconds
     memorySize: 128 # mb
     events:
