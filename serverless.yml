@@ -9,10 +9,12 @@ provider:
 functions:
   Webapp:
     handler: src/handler.webapp
+    name: One-TUDN-int-Webapp
     timeout: 30 # seconds
     memorySize: 128 # mb
     events:
       - http:
+          name: int-One-TUDN
           method: GET
           path: /One-TUDN 
           
