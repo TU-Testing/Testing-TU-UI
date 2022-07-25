@@ -7,7 +7,7 @@ provider:
   region: us-east-1
 
 functions:
-  one-tudn-int:
+  Webapp:
     handler: src/handler.webapp
     #name: one-tudn-int
     timeout: 30 # seconds
