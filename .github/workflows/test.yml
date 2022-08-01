@@ -1,25 +1,57 @@
+name: Deploy Lambda
 
-name: WebApp
+on:
+  push:
+    branches:
+      - main
 
-on: push
-permissions:
-  id-token: write
-  contents: read
 jobs:
-  build:
+  deploy:
+    name: deploy
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [16.x]
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
 
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.ACCESS_ID }}
-          aws-secret-access-key: ${{ secrets.ACCESS_KEY }}
-          aws-region: us-east-1
+    - uses: actions/checkout@v2
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: serverless deploy
+      uses: serverless/github-action@master
+      with:
+        arg: -c 'cd ../../packages/webapp/ && pwd && deploy'
+        entrypoint: /bin/sh
+      env:
+        # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
+        # or if using AWS credentials directly
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+    
+    #- name: Send Slack Notification on Success
+      #uses: rtCamp/action-slack-notify@v2
+      #if: ${{ success() }}
+      #env:
+        #SLACK_CHANNEL: _devops_
+        ##SLACK_COLOR: "#9e2a2b"
+        ##SLACK_ICON: https://someurl.com/logo.png
+        #SLACK_MESSAGE: "Job ${{ github.job }} succeeded"
+        #SLACK_TITLE: Success execution
+        #SLACK_USERNAME: Deploy Bot
+        #SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+    
+    #- name: Send Slack Notification on Failure
+      #uses: rtCamp/action-slack-notify@v2
+      #if: ${{ failure() }}
+      #env:
+        #SLACK_CHANNEL: _devops_
+        #SLACK_COLOR: "#9e2a2b"
+        #SLACK_ICON: https://someurl.com/logo.png
+        #SLACK_MESSAGE: "Failed execution on production build"
+        #SLACK_TITLE: Failed execution
+        #SLACK_USERNAME: Deploy Bot
+        #SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
