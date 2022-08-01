@@ -1,0 +1,53 @@
+{
+  "name": "@televisaunivision/webapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev:web": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest --coverage --runInBand --colors",
+    "test:ci": "jest --ci --reporters=default --reporters=github-actions --coverage --colors",
+    "lint": "rushx lint:css && rushx lint:code",
+    "lint:code": "NEXT_LINT=true next lint -d src && tsc --noEmit",
+    "lint:css": "stylelint ./src/**/*.style* --config ./node_modules/@televisaunivision/eslint-settings/stylelint.json --allow-empty-input"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.6.0",
+    "framer-motion": "^6.3.3",
+    "graphql": "^16.3.0",
+    "next": "^12.2.3",
+    "react-dom": "^18.1.0",
+    "react": "^18.1.0",
+    "styled-components": "5.3.0",
+    "@televisaunivision/commons": "workspace:*",
+    "@televisaunivision/components-base-web": "workspace:*",
+    "@televisaunivision/icons": "workspace:*"
+  },
+  "devDependencies": {
+    "@next/bundle-analyzer": "^12.1.6",
+    "@next/eslint-plugin-next": "12.1.6",
+    "@rushstack/eslint-config": "^2.6.0",
+    "@rushstack/heft-jest-plugin": "^0.3.1",
+    "@rushstack/heft": "^0.45.1",
+    "@televisaunivision/eslint-settings": "workspace:*",
+    "@televisaunivision/jest": "workspace:*",
+    "@televisaunivision/typescript-settings": "workspace:*",
+    "@testing-library/jest-dom": "^5.16.1",
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/react": "^13.2.0",
+    "@types/heft-jest": "^1.0.2",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.29",
+    "@types/react-dom": "^18.0.3",
+    "@types/react": "^18.0.8",
+    "@types/styled-components": "^5.1.25",
+    "@types/testing-library__jest-dom": "^5.9.1",
+    "eslint-config-next": "^12.1.5",
+    "eslint": "^8.13.0",
+    "jest": "^28.1.2",
+    "react-is": "^18.1.0",
+    "stylelint": "^13.13.1",
+    "typescript": "^4.6.3"
+  }
+}

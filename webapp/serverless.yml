@@ -1,0 +1,48 @@
+# service name
+service: nextjs-with-aws-serverless
+
+# it is necessary to specify to limit the version of the framework
+# frameworkVersion: "3"
+
+serverless-webapp-nextjs:
+  component: '@sls-next/serverless-component@3.7.0'
+  # custom lambda@edge
+  inputs:
+    bucketName: webapp-assets-static
+    name:
+      defaultLambda: webappDefaultLambda
+      apiLambda: webappApiLambda
+      imageLambda: webappImageLambda
+    runtime:
+      defaultLambda: 'nodejs16.x'
+      apiLambda: 'nodejs16.x'
+      imageLambda: 'nodejs16.x'
+    memory:
+      defaultLambda: 2048
+      apiLambda: 2048
+      imageLambda: 2048
+    timeout:
+      defaultLambda: 15
+      apiLambda: 15
+      imageLambda: 15
+    cloudfront:
+      # this is the cache behaviour for next.js api pages
+      api:
+        defaultTTL: 10 # value is define in seconds
+        minTTL: 5 # is required, minimum ttl the error is cached (default 10)
+        maxTTL: 10
+      # the cache settings below will be applied to the CloudFront distribution
+      # the pages will be cached at CloudFront's edge locations
+      # you can set other cache behaviours like "defaults" above that can handle server side rendering
+      # but more specific for a subset of your next.js pages
+      /posts/*:
+        defaultTTL: 10
+        minTTL: 5
+        maxTTL: 1000
+        forward:
+          cookies: 'all'
+          queryString: false
+      /about:
+        defaultTTL: 10
+        minTTL: 5
+        maxTTL: 3000

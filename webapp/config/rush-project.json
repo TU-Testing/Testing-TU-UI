@@ -1,0 +1,13 @@
+{
+  "incrementalBuildIgnoredGlobs": ["temp/**"],
+  "disableBuildCacheForProject": true,
+  "operationSettings": [
+    {
+      "operationName": "build"
+    },
+    {
+      "operationName": "test",
+      "disableBuildCacheForOperation": true
+    }
+  ]
+}

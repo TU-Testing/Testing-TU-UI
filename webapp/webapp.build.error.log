@@ -1,0 +1,4 @@
+warn  - You have enabled experimental feature(s).
+warn  - Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use them at your own risk.
+
+warn  - SWC minify release candidate enabled. https://nextjs.org/docs/messages/swc-minify-enabled

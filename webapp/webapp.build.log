@@ -1,0 +1,16 @@
+Invoking: rushx lint:css && rushx lint:code 
+Found configuration in /Users/carlosgarcia/Documents/GitHub/core-web-native-evolution/rush.json
+
+Rush Multi-Project Build Tool 5.70.0 - Node.js 16.14.2 (LTS)
+> "stylelint ./src/**/*.style* --config ./node_modules/@televisaunivision/eslint-settings/stylelint.json --allow-empty-input"
+
+Found configuration in /Users/carlosgarcia/Documents/GitHub/core-web-native-evolution/rush.json
+
+Rush Multi-Project Build Tool 5.70.0 - Node.js 16.14.2 (LTS)
+> "NEXT_LINT=true next lint -d src && tsc --noEmit"
+
+warn  - You have enabled experimental feature(s).
+warn  - Experimental features are not covered by semver, and may cause unexpected or broken application behavior. Use them at your own risk.
+
+warn  - SWC minify release candidate enabled. https://nextjs.org/docs/messages/swc-minify-enabled
+✔ No ESLint warnings or errors
