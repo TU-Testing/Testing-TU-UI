@@ -23,7 +23,7 @@ jobs:
     - name: serverless deploy
       uses: serverless/github-action@master
       with:
-        source: '../../packages/webapp/serverless.yml'
+        source: '/webapp/packages/webapp/serverless.yml'
         target: 'serverless.yml' 
       env:
         # SERVERLESS_ACCESS_KEY: ${{ secrets.SERVERLESS_ACCESS_KEY }}
